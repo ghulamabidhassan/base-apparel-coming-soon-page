@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <title>Base Apparel coming soon page</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="main" role="main">
+      <div class="left">
+        <div class="left-items">
+          <div><img src="./logo.svg" alt="" class="logo" /></div>
+          <div>
+            <img src="./images/hero-mobile.jpg" alt="" class="banner-mob" />
+          </div>
+          <div class="main-heading">
+            <h3 class="heading"><span class="span">we're</span></h3>
+            <h3 class="heading">coming</h3>
+            <h3 class="heading">soon</h3>
+          </div>
+          <div>
+            <p class="content">
+              Hello fellow shoppers! We're currently building our new fashion
+              store. Add your email below to stay up-to-date with announcements
+              and our launch deals.
+            </p>
+          </div>
+          <form class="form" action="/">
+            <div class="input-div">
+              <input
+                class="input"
+                placeholder="Email Address"
+                type="email"
+                pattern="[A-Za-z0-9._+-]+@[A-Za-z0-9-]+\.[a-z]{2,12}"
+              />
+              <img src="./error.svg" alt="" class="error-img" />
+              <button class="btn"><img src="./icon-arrow.svg" alt="" /></button>
+            </div>
+            <p class="error">Please provide a valid email</p>
+          </form>
+        </div>
+        <img
+          src="./images/bg-pattern-desktop.svg"
+          alt=""
+          class="background-banner"
+        />
+      </div>
+      <div class="right">
+        <img src="./images/hero-desktop.jpg" alt="" class="banner-desktop" />
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,413 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100;200;300;400;500;600&display=swap");
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --Desaturated-Red: hsl(0, 36%, 70%);
+  --Soft-Red: hsl(0, 93%, 68%);
+  --Dark-Grayish-Red: hsl(0, 6%, 24%);
+}
+
+/* Linear, 135deg, from hsl(0, 0%, 100%), to hsl(0, 100%, 98%); */
+/* Linear, 135deg, from hsl(0, 80%, 86%), to hsl(0, 74%, 74%); */
+
+body {
+  font-family: Josefin Sans, sans-serif;
+  height: 100%;
+  width: 100%;
+}
+
+.main {
+  height: 100%;
+  width: 100%;
+}
+
+.left {
+  margin-bottom: 3em;
+}
+
+.logo {
+  height: 1.6em;
+  margin: 1.5em 0 1.5em 2.5em;
+}
+
+.banner-mob {
+  width: 100%;
+}
+
+.banner-desktop {
+  display: none;
+}
+
+.main-heading {
+  margin: 1em 0;
+}
+
+.heading {
+  text-transform: uppercase;
+  text-align: center;
+  width: 100%;
+  font-size: 2.3em;
+  padding: 0.2em 1.5em 0.2em 1.5em;
+  line-height: 1.2em;
+  font-family: Josefin Sans;
+  font-weight: 500;
+  letter-spacing: 5px;
+  color: var(--Dark-Grayish-Red);
+}
+
+.span {
+  color: var(--Desaturated-Red);
+  font-weight: 300;
+}
+
+:is(.content, .form, .error) {
+  padding: 0 1.5em;
+}
+
+.content {
+  font-size: 1.1em;
+  line-height: 1.5em;
+  text-align: center;
+  color: var(--Desaturated-Red);
+  margin-bottom: 1em;
+}
+
+.input-div {
+  width: 100%;
+  display: flex;
+}
+
+input {
+  width: 100%;
+  border-radius: 3em;
+  border: 0.5px solid gray;
+  font-size: 1em;
+  padding-left: 2em;
+  position: relative;
+}
+
+input::placeholder {
+  color: var(--Desaturated-Red);
+  font-size: 1.2em;
+  opacity: 0.5;
+  letter-spacing: 1px;
+  font-size: 0.8em;
+}
+
+input:focus {
+  outline: none;
+  transition: 200ms ease-in-out;
+}
+
+input::before {
+  content: url(./error.svg);
+  height: 2em;
+}
+
+.btn {
+  background-image: linear-gradient(
+    to right,
+    hsl(0, 36%, 70%),
+    hsl(0, 93%, 68%)
+  );
+  padding: 1.2em 2.2em;
+  margin-left: -3.5em;
+  border-radius: 3em;
+  border: none;
+  cursor: pointer;
+  transition: 300ms ease-in-out;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  z-index: 2;
+}
+
+.btn:hover {
+  background-image: linear-gradient(
+    to right,
+    hsl(0, 36%, 80%),
+    hsla(0, 93%, 80%)
+  );
+  transition: 300ms ease-in-out;
+}
+
+.error {
+  margin: 1em 0;
+  color: var(--Soft-Red);
+  display: none;
+}
+
+.error-img {
+  position: absolute;
+  margin-top: 0.8em;
+  right: 30%;
+  display: none;
+}
+
+.background-banner {
+  display: none;
+}
+
+input:invalid {
+  outline: 1px solid red;
+  border: none;
+}
+
+.form:has(.input-div > input:invalid) .error {
+  display: block;
+}
+
+.form:has(.input-div > input:invalid) .error-img {
+  display: block;
+}
+
+input:valid {
+  outline: 1px solid rgba(255, 0, 0, 0.35);
+  border: none;
+}
+
+.form:has(.input-div > input:valid) .error {
+  display: none;
+}
+
+.form:has(.input-div > input:valid) .error-img {
+  display: none;
+}
+
+/* 768px */
+@media screen and (min-width: 48em) {
+  .logo {
+    height: 3em;
+    margin: 2em 2em;
+  }
+
+  .heading {
+    font-size: 3em;
+    padding: 0.2em 0em 0.2em 0em;
+  }
+
+  .content {
+    width: 80%;
+    font-size: 1.2em;
+    line-height: 1.5em;
+    margin: 1em auto;
+  }
+
+  .input-div {
+    justify-content: center;
+    align-items: center;
+  }
+
+  input {
+    padding: 1.2em 2.2em;
+    width: 70%;
+  }
+
+  .error-img {
+    margin-top: 0em;
+    right: 30%;
+  }
+
+  .error {
+    text-align: center;
+    font-size: 1.2em;
+  }
+}
+
+/* 1024px */
+@media screen and (min-width: 64em) {
+  .banner-mob {
+    height: fit-content;
+  }
+
+  .heading {
+    font-size: 3.5em;
+    padding: 0.2em 0em 0.2em 0em;
+  }
+
+  .content {
+    width: 70%;
+    font-size: 1.4em;
+    line-height: 1.5em;
+    margin: 1em auto;
+  }
+
+  input {
+    width: 60%;
+    font-size: 1.3em;
+  }
+
+  .btn {
+    margin-left: -5em;
+    padding: 2em 4em;
+  }
+
+  .error-img {
+    margin-top: 0em;
+    height: 2em;
+    right: 33%;
+  }
+}
+
+/* 1366px */
+@media screen and (min-width: 85.375em) {
+  body {
+    height: 100vh;
+    width: 100%;
+  }
+
+  .main {
+    display: grid;
+    grid-template-columns: 1.6fr 1fr;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .banner-mob {
+    display: none;
+  }
+
+  .right img {
+    display: block;
+    height: 100vh;
+    width: 100%;
+    background-size: contain;
+  }
+
+  .left {
+    width: 100%;
+    height: 100%;
+    padding: 3em 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start;
+    position: relative;
+  }
+
+  .left-items > * {
+    padding: 0;
+    text-align: left;
+  }
+
+  .left-items {
+    margin-left: 6em;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-content: space-around;
+  }
+
+  .logo {
+    height: 2em;
+    width: fit-content;
+    padding: 0;
+    margin: 1em 0;
+  }
+
+  .main-heading {
+    margin: 1em 0 0em 0;
+  }
+
+  .heading {
+    all: unset;
+    font-size: 4em;
+    display: flex;
+    line-height: 1.3em;
+    text-transform: uppercase;
+  }
+
+  .content {
+    width: auto;
+    font-size: 1.1em;
+    line-height: 1.7em;
+    text-align: left;
+    padding: 0 10em 0 0;
+    line-break: auto;
+  }
+
+  .input-div {
+    justify-content: flex-start;
+    width: 100%;
+    align-items: center;
+    margin: 0 auto;
+  }
+
+  input {
+    width: 60%;
+    padding: 0.7em 0em 0.7em 1.5em;
+  }
+
+  .btn {
+    padding: 1.25em 3em;
+  }
+
+  .error-img {
+    left: 50%;
+  }
+
+  .background-banner {
+    display: block;
+    position: absolute;
+    width: 100%;
+    max-height: 100%;
+    z-index: -1;
+  }
+
+  .error {
+    text-align: left;
+    margin: 1em 0;
+    font-size: 1.1em;
+    padding: 0em 0 0 1.5em;
+    color: var(--Soft-Red);
+  }
+}
+
+/* 1920px */
+
+@media screen and (min-width: 120em) {
+  .main {
+    display: grid;
+    grid-template-columns: 1.6fr 1.3fr;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .logo {
+    height: 2.8em;
+    margin-top: 2em 0;
+  }
+
+  .main-heading {
+    font-size: 1.3em;
+    margin: 6em 0 1.5em 0;
+  }
+
+  .content {
+    font-size: 1.8em;
+    margin: 0 0 3em 0;
+  }
+
+  input {
+    width: 50%;
+    padding: 1.3em;
+  }
+
+  .btn {
+    margin-left: -6em;
+    padding: 2.3em 5em;
+  }
+
+  .error-img {
+    scale: 1.3;
+    left: 42%;
+  }
+}
