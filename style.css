@@ -263,7 +263,7 @@ input:valid {
 
   .main {
     display: grid;
-    grid-template-columns: 1.6fr 1fr;
+    grid-template-columns: 1.6fr 1.1fr;
     height: 100vh;
     width: 100%;
     overflow: hidden;
@@ -272,6 +272,8 @@ input:valid {
   .banner-mob {
     display: none;
   }
+
+  /* banner-desktop */
 
   .right img {
     display: block;
@@ -313,12 +315,12 @@ input:valid {
   }
 
   .main-heading {
-    margin: 1em 0 0em 0;
+    margin: 1.5em 0 0em 0;
   }
 
   .heading {
     all: unset;
-    font-size: 4em;
+    font-size: 3.5em;
     display: flex;
     line-height: 1.3em;
     text-transform: uppercase;
@@ -350,6 +352,7 @@ input:valid {
   }
 
   .error-img {
+    scale: 0.7;
     left: 50%;
   }
 
@@ -364,7 +367,7 @@ input:valid {
   .error {
     text-align: left;
     margin: 1em 0;
-    font-size: 1.1em;
+    font-size: 1em;
     padding: 0em 0 0 1.5em;
     color: var(--Soft-Red);
   }
@@ -375,10 +378,10 @@ input:valid {
 @media screen and (min-width: 120em) {
   .main {
     display: grid;
-    grid-template-columns: 1.6fr 1.3fr;
+    grid-template-columns: 1.6fr 1.1fr;
     height: 100vh;
     width: 100%;
-    overflow: hidden;
+    /* overflow: hidden; */
   }
 
   .logo {
@@ -388,12 +391,12 @@ input:valid {
 
   .main-heading {
     font-size: 1.3em;
-    margin: 6em 0 1.5em 0;
+    margin: 3em 0 1.5em 0;
   }
 
   .content {
     font-size: 1.8em;
-    margin: 0 0 3em 0;
+    margin: 0 0 1em 0;
   }
 
   input {
@@ -407,7 +410,7 @@ input:valid {
   }
 
   .error-img {
-    scale: 1.3;
+    scale: 1;
     left: 42%;
   }
 }
